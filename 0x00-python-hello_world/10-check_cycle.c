@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 
 	second_pointer = list;
 	previous = list;
-	for (;list && second_pointer && second_pointer->next;)
+	for (; list && second_pointer && second_pointer->next;)
 	{
 		list = list->next;
 		second_pointer = second_pointer->next->next;
@@ -25,7 +25,7 @@ int check_cycle(listint_t *list)
 			while (1)
 			{
 				second_pointer = previous;
-				for (;second_pointer->next != list && second_pointer->next != previous;)
+				for (; second_pointer->next != list && second_pointer->next != previous;)
 				{
 					second_pointer = second_pointer->next;
 				}
