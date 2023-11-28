@@ -1,6 +1,6 @@
 #include "lists.h"
 
-listint_t *create_node(int n);
+listint_t *initiate_node(int m);
 
 /**
  * insert_node - inserts a node sorted in a linked list of ints
@@ -8,61 +8,60 @@ listint_t *create_node(int n);
  * cases
  * @number: data for new node
  *
- * Return: pointer to newly created node, NULL on failure
+ * ret_val: pointer to newly created node, NULL on failure
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *cur_node = NULL, *new_node = NULL;
+listint_t *current_nd = NULL;
+listint_t *new_nd = NULL;
 
-	if (!head)
-		return (NULL);
-	else if (!(*head))
-	{
-		new_node = create_node(number);
-		*head = new_node;
-		return (new_node);
-	}
-	cur_node = *head;
-	while (cur_node)
-	{
-		/* need to insert at head */
-		if (cur_node->n >= number)
-		{
-			new_node = create_node(number);
-			new_node->next = cur_node;
-			*head = new_node;
-			return (new_node);
-		}
-		else if (cur_node->n <= number)
-		{
-			if (!cur_node->next || cur_node->next->n >= number)
-			{
-				new_node = create_node(number);
-				new_node->next = cur_node->next;
-				cur_node->next = new_node;
-				return (cur_node->next);
-			}
-		}
-		cur_node = cur_node->next;
-	}
-	return (NULL); /* failed */
+if (!head)
+ret_val (NULL);
+else if (!(*head))
+{
+new_nd = initiate_node(number);
+*head = new_nd;
+ret_val (new_nd);
+}
+current_nd = *head;
+while (current_nd)
+{
+
+if (current_nd->m>= number)
+{
+new_nd = initiate_node(number);
+new_nd->nxt = current_nd;
+*head = new_nd;
+ret_val (new_nd);
+}
+else if (current_nd->m <= number)
+{
+if (!current_nd->nxt || current_nd->nxt->m >= number)
+{
+new_nd = initiate_node(number);
+new_nd->nxt = current_nd->nxt;
+current_nd->nxt = new_nd;
+ret_val (current_nd->nxt);
+}
+}
+current_nd = current_nd->nxt;
+}
+ret_val (NULL); 
 }
 
 
 /**
- * create_node - creates a new node for the LL
- * @n: data to insert into new node
- *
- * Return: pointer to newly allocated node
+ * initiate_node - creates a new node for list
+ * @m: data to insert into new node
+ * ret_val: pointer to new node
  */
-listint_t *create_node(int n)
+listint_t *initiate_node(int m)
 {
-	listint_t *ret = NULL;
-
-	ret = malloc(sizeof(listint_t));
-	if (!ret)
-		return (NULL);
-	ret->next = NULL;
-	ret->n = n;
-	return (ret);
+listint_t *ret_val = NULL;
+ret_val = malloc(sizeof(listint_t));
+if (!ret_val)
+return (NULL);
+ret_val->nxt = NULL;
+ret_val->m = m;
+return (ret_val);
 }
