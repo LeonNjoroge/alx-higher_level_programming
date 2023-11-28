@@ -3,65 +3,66 @@
 listint_t *create_node(int n);
 
 /**
- * create_node - inserts a node sorted in a linked list of ints
- * @head: double pointer to head of LL, needed for modification in edge
+ * insert_node - inserts a node sorted in a linked list
+ * @head: double pointer to head for modification in edge
  * cases
  * @number: data for new node
  *
- * ret_val: pointer to newly created node, NULL on failure
+ * Return: pointer to newly created node
  */
-listint_t *create_node(listint_t **head, int number)
+listint_t *insert_node(listint_t **head, int number)
 {
-listint_t *current_nd = NULL;
-listint_t *new_nd = NULL;
+	listint_t *node_current = NULL;
+	listint_t *node_new = NULL;
 
-if (!head)
-ret_val (NULL);
-else if (!(*head))
-{
-new_nd = create_node(number);
-*head = new_nd;
-ret_val (new_nd);
-}
-current_nd = *head;
-while (current_nd)
-{
+	if (!head)
+		return (NULL);
+	else if (!(*head))
+	{
+		node_new = create_node(number);
+		*head = node_new;
+		return (node_new);
+	}
+	node_current = *head;
+	while (node_current)
+	{
+		if (node_current->n >= number)
+		{
+			node_new = create_node(number);
+			node_new->next = node_current;
+			*head = node_new;
+			return (node_new);
+		}
+		else if (node_current->n <= number)
+		{
+			if (!node_current->next || node_current->next->n >= number)
+			{
 
-if (current_nd->n >= number)
-{
-new_nd = create_node(number);
-new_nd->next = current_nd;
-*head = new_nd;
-ret_val (new_nd);
-}
-else if (current_nd->n <= number)
-{
-if (!current_nd->next || current_nd->next->n >= number)
-{
-new_nd = create_node(number);
-new_nd->next = current_nd->next;
-current_nd->next = new_nd;
-ret_val (current_nd->next);
-}
-}
-current_nd = current_nd->next;
-}
-ret_val (NULL); 
+				node_new = create_node(number);
+				node_new->next = node_current->next;
+				node_current->next = node_new;
+				return (node_current->next);
+			}
+		}
+		node_current = node_current->next;
+	}
+	return (NULL); /* failed */
 }
 
 
 /**
- * create_node - creates a new node for list
- * @m: data to insert into new node
- * ret_val: pointer to new node
+ * create_node - creates a new node
+ * @n: data to insert
+ * Return: pointer to newly allocated node
  */
-listint_t *create_node(int m)
+listint_t *create_node(int n)
 {
-listint_t *ret_val = NULL;
-ret_val = malloc(sizeof(listint_t));
-if (!ret_val)
-return (NULL);
-ret_val->next = NULL;
-ret_val->n = n;
-return (ret_val);
+	listint_t *val = NULL;
+
+	val = malloc(sizeof(listint_t));
+	if (!val)
+		return (NULL);
+	val->next = NULL;
+	val->n = n;
+	return (val);
 }
