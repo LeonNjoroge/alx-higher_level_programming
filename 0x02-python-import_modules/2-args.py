@@ -13,8 +13,8 @@ if __name__ == '__main__':
             print('{:d}: {}'.format(m, argument[m]))
     elif length == 1:
         print(length, 'argument:')
-        
-        for m in range(m, length + 1):
+
+        for m in range(1, length + 1):
             print('{:d}: {}'.format(m, argument[m]))
     elif length == 0:
         print(length, 'arguments.')
