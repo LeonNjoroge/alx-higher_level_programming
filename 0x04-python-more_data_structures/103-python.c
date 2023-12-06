@@ -52,10 +52,10 @@ void print_python_list(PyObject *p)
         m = 0;
         while ( m < val)
         {
-                type = (values->ob_item[i])->ob_type->tp_name;
-		printf("Element %i: %s\n", m, type);
-                if (!strcmp(type, "bytes"))
-                        print_python_bytes(values->ob_item[i]);
-        m++;
+            type = (values->ob_item[m])->ob_type->tp_name;
+		    printf("Element %i: %s\n", m, type);
+            if (!strcmp(type, "bytes"))
+                print_python_bytes(values->ob_item[m]);
+            m++;
         }
 }
