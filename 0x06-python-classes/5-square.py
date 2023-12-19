@@ -11,6 +11,7 @@ Methods:
     my_print(self): Print the square with the '#' character.
 """
 
+
 class Square:
     """Represent a square with a specified size."""
 

@@ -9,6 +9,7 @@ Methods:
     __init__(self, size): Initialize a new Square with a specified size.
 """
 
+
 class Square:
     """
     Represents a square.

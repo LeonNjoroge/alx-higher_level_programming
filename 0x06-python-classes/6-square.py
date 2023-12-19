@@ -6,12 +6,13 @@ Attributes:
     position (tuple): The position of the square represented as a tuple (x, y).
 
 Methods:
-    __init__(self, size=0, position=(0, 0)): Initialize a new Square with a specified size and position.
+    __init__(self, size=0, position=(0, 0)): Initialize a new Square
     size(self): Get/set the current size of the square using a property.
-    position(self): Get/set the current position of the square using a property.
+    position(self): Get/set the current position of the square 
     area(self): Return the current area of the square.
     my_print(self): Print the square with the '#' character, respecting the position.
 """
+
 
 class Square:
     """Represent a square with a specified size and position."""
@@ -23,7 +24,7 @@ class Square:
             size (int): The size of the new square.
             position (tuple): The position of the new square.
         Raises:
-            TypeError: If size is not an integer or if position is not a tuple of 2 positive integers.
+            TypeError: If size is not an integer or if position
             ValueError: If size is less than 0.
         """
         self.size = size

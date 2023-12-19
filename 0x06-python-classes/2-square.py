@@ -2,6 +2,7 @@
 # 2-square.py
 """Define a Square class."""
 
+
 class Square:
     """Represent a square with a specified size.
 

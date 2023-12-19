@@ -9,6 +9,7 @@ Methods:
     area(self): Return the current area of the square.
 """
 
+
 class Square:
     """Represent a square with a specified size."""
 
