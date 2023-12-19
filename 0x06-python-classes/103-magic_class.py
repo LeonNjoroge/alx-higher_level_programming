@@ -2,6 +2,7 @@
 """Define a MagicClass based on a given ByteCode."""
 import math
 
+
 class MagicClass:
     """Represent a class with magic calculations."""
 

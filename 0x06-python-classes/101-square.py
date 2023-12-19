@@ -6,13 +6,14 @@ Attributes:
     position (tuple): The position of the square represented as a tuple (x, y).
 
 Methods:
-    __init__(self, size=0, position=(0, 0)): Initialize a new Square size and position.
+    __init__(self, size=0, position=(0, 0)): Initialize a new Square size and pos
     size(self): Get/set the current size of the square using a property.
-    position(self): Get/set the current position of the square using a property.
+    position(self): Set the current position of the square.
     area(self): Return the current area of the square.
-    my_print(self): Print the square with the '#' character, respecting the position.
+    my_print(self): Print the square with the '#' character.
     __str__(self): Define the string representation of a Square.
 """
+
 
 class Square:
     """Represent a square with a specified size and position."""
@@ -24,7 +25,8 @@ class Square:
             size (int): The size of the new square.
             position (tuple): The position of the new square.
         Raises:
-            TypeError: If size is not an integer or if position is not a tuple of 2 positive integers.
+            TypeError: If size is not an integer or if position
+            is not a tuple of 2 positive integers.
             ValueError: If size is less than 0.
         """
         self.size = size
@@ -77,7 +79,7 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        """Print the square with the '#' character, respecting the position."""
+        """Print the square with the '#' character, position."""
         if self.__size == 0:
             print("")
             return

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """My square module"""
 
+
 class Square:
     """Define a Square class."""
 
@@ -47,7 +48,7 @@ class Square:
         return self.__size * self.__size
 
     def __le__(self, other):
-        """Check if the area of self is less than or equal to the area of other."""
+        """Check if the area of self is < or = to the area of other."""
         return self.area() <= other.area()
 
     def __lt__(self, other):
@@ -55,7 +56,7 @@ class Square:
         return self.area() < other.area()
 
     def __ge__(self, other):
-        """Check if the area of self is greater than or equal to the area of other."""
+        """Check if the area of self is > or = to the area of other."""
         return self.area() >= other.area()
 
     def __ne__(self, other):
