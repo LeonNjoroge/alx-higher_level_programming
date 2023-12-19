@@ -6,7 +6,7 @@ Attributes:
     position (tuple): The position of the square represented as a tuple (x, y).
 
 Methods:
-    __init__(self, size=0, position=(0, 0)): Initialize a new Square size and pos
+    __init__(self, size=0, position=(0, 0)): Initialize a new Square size
     size(self): Get/set the current size of the square using a property.
     position(self): Set the current position of the square.
     area(self): Return the current area of the square.
