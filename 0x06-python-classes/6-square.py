@@ -8,9 +8,9 @@ Attributes:
 Methods:
     __init__(self, size=0, position=(0, 0)): Initialize a new Square
     size(self): Get/set the current size of the square using a property.
-    position(self): Get/set the current position of the square 
+    position(self): Get/set the current position of the square
     area(self): Return the current area of the square.
-    my_print(self): Print the square with the '#' character, respecting the position.
+    my_print(self): Print the square with the '#' character
 """
 
 
@@ -85,5 +85,5 @@ class Square:
         [print("") for m in range(0, self.__position[1])]
         for m in range(0, self.__size):
             [print(" ", end="") for n in range(0, self.__position[0])]
-            [print("#", end="") for l in range(0, self.__size)]
+            [print("#", end="") for k in range(0, self.__size)]
             print("")

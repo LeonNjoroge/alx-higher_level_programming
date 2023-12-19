@@ -6,7 +6,7 @@ Attributes:
     position (tuple): The position of the square represented as a tuple (x, y).
 
 Methods:
-    __init__(self, size=0, position=(0, 0)): Initialize a new Square with a specified size and position.
+    __init__(self, size=0, position=(0, 0)): Initialize a new Square size and position.
     size(self): Get/set the current size of the square using a property.
     position(self): Get/set the current position of the square using a property.
     area(self): Return the current area of the square.
@@ -85,7 +85,7 @@ class Square:
         [print("") for m in range(0, self.__position[1])]
         for m in range(0, self.__size):
             [print(" ", end="") for n in range(0, self.__position[0])]
-            [print("#", end="") for l in range(0, self.__size)]
+            [print("#", end="") for k in range(0, self.__size)]
             print("")
 
     def __str__(self):
@@ -94,7 +94,7 @@ class Square:
             [print("") for m in range(0, self.__position[1])]
         for m in range(0, self.__size):
             [print(" ", end="") for n in range(0, self.__position[0])]
-            [print("#", end="") for l in range(0, self.__size)]
+            [print("#", end="") for k in range(0, self.__size)]
             if m != self.__size - 1:
                 print("")
         return ""
