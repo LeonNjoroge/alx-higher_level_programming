@@ -6,106 +6,96 @@ Solves the N-queens puzzle
 import sys
 
 
-def init_board(n):
+def initialize_board(size):
     """Initialize an `n`x`n` sized chessboard with 0's."""
-    board = []
-    [board.append([]) for l in range(n)]
-    [row.append(' ') for k in range(n) for row in board]
-    return board
+    chessboard = []
+    [chessboard.append([]) for i in range(size)]
+    [row.append(' ') for i in range(size) for row in chessboard]
+    return chessboard
 
 
-def board_deepcopy(board):
+def copy_chessboard(chessboard):
     """Return a deepcopy of a chessboard."""
+    if isinstance(chessboard, list):
+        return list(map(copy_chessboard, chessboard))
+    return chessboard
 
-    if isinstance(board, list):
-        return list(map(board_deepcopy, board))
-    return board
 
-
-def get_solution(board):
+def get_solution(chessboard):
     """Return the list of lists representation of a solved chessboard."""
-
     solution = []
-    for b in range(len(board)):
-        for f in range(len(board)):
-            if board[b][f] == "Q":
-                solution.append([b, f])
+    for r in range(len(chessboard)):
+        for c in range(len(chessboard)):
+            if chessboard[r][c] == "Q":
+                solution.append([r, c])
                 break
     return solution
 
 
-def xout(board, row, col):
-    """X out spots on a chessboard.
-    All spots where non-attacking queens can no
-    longer be played are X-ed out.
-    Args:
-        board (list): The current working chessboard.
-        row (int): The row where a queen was last played.
-        col (int): The column where a queen was last played.
-    """
-
-    # X out all forward spots
-    for b in range(col + 1, len(board)):
-        board[row][b] = "x"
-    # X out all babkwards spots
-    for b in range(col - 1, -1, -1):
-        board[row][b] = "x"
-    # X out all spots below
-    for f in range(row + 1, len(board)):
-        board[f][col] = "x"
-    # X out all spots above
-    for f in range(row - 1, -1, -1):
-        board[f][col] = "x"
-    # X out all spots diagonally down to the right
-    b = col + 1
-    for f in range(row + 1, len(board)):
-        if b >= len(board):
+def mark_attacked(chessboard, row, col):
+    """Mark spots on a chessboard attacked by a queen."""
+    # Mark all forward spots
+    for c in range(col + 1, len(chessboard)):
+        chessboard[row][c] = "x"
+    # Mark all backwards spots
+    for c in range(col - 1, -1, -1):
+        chessboard[row][c] = "x"
+    # Mark all spots below
+    for r in range(row + 1, len(chessboard)):
+        chessboard[r][col] = "x"
+    # Mark all spots above
+    for r in range(row - 1, -1, -1):
+        chessboard[r][col] = "x"
+    # Mark all spots diagonally down to the right
+    c = col + 1
+    for r in range(row + 1, len(chessboard)):
+        if c >= len(chessboard):
             break
-        board[f][b] = "x"
-        b += 1
-    # X out all spots diagonally up to the left
-    b = col - 1
-    for f in range(row - 1, -1, -1):
-        if b < 0:
+        chessboard[r][c] = "x"
+        c += 1
+    # Mark all spots diagonally up to the left
+    c = col - 1
+    for r in range(row - 1, -1, -1):
+        if c < 0:
             break
-        board[f][b] = "x"
-        b -= 1
-    # X out all spots diagonally up to the right
-    b = col + 1
-    for f in range(row - 1, -1, -1):
-        if b >= len(board):
+        chessboard[r][c] = "x"
+        c -= 1
+    # Mark all spots diagonally up to the right
+    c = col + 1
+    for r in range(row - 1, -1, -1):
+        if c >= len(chessboard):
             break
-        board[f][b] = "x"
-        b += 1
-    # X out all spots diagonally down to the left
-    b = col - 1
-    for f in range(row + 1, len(board)):
-        if b < 0:
+        chessboard[r][c] = "x"
+        c += 1
+    # Mark all spots diagonally down to the left
+    c = col - 1
+    for r in range(row + 1, len(chessboard)):
+        if c < 0:
             break
-        board[f][b] = "x"
-        b -= 1
+        chessboard[r][c] = "x"
+        c -= 1
 
 
-def recursive_solve(board, row, queens, solutions):
+def recursive_solve(chessboard, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
     Args:
-        board (list): The current working chessboard.
+        chessboard (list): The current working chessboard.
         row (int): The current working row.
         queens (int): The current number of placed queens.
         solutions (list): A list of lists of solutions.
     Returns:
         solutions
     """
-    if queens == len(board):
-        solutions.append(get_solution(board))
+    if queens == len(chessboard):
+        solutions.append(get_solution(chessboard))
         return solutions
 
-    for c in range(len(board)):
-        if board[row][c] == " ":
-            tmp_board = board_deepcopy(board)
-            tmp_board[row][c] = "Q"
-            xout(tmp_board, row, c)
-            solutions = recursive_solve(tmp_board, row + 1,
+    for col in range(len(chessboard)):
+        if chessboard[row][col] == " ":
+            temp_chessboard = copy_chessboard(chessboard)
+            temp_chessboard[row][col] = "Q"
+            mark_attacked(temp_chessboard, row, col)
+            solutions = recursive_solve(temp_chessboard, row + 1,
                                         queens + 1, solutions)
 
     return solutions
@@ -122,7 +112,7 @@ if __name__ == "__main__":
         print("N must be at least 4")
         sys.exit(1)
 
-    board = init_board(int(sys.argv[1]))
-    solutions = recursive_solve(board, 0, 0, [])
+    chessboard = initialize_board(int(sys.argv[1]))
+    solutions = recursive_solve(chessboard, 0, 0, [])
     for sol in solutions:
         print(sol)
