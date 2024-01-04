@@ -86,7 +86,7 @@ def xout(board, row, col):
         b -= 1
 
 
-def rebursive_solve(board, row, queens, solutions):
+def recursive_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
     Args:
         board (list): The current working chessboard.

@@ -4,6 +4,7 @@ Module 1-rectangle
 Defines a Rectangle class.
 """
 
+
 class Rectangle:
     """Rectangle class defined by width and height."""
 
@@ -15,7 +16,6 @@ class Rectangle:
             height (int): height of the rectangle
         """
 
-
         self.width = width
         self.height = height
 
@@ -23,7 +23,6 @@ class Rectangle:
     def width(self):
         """Retrieves the width of a Rectangle instance."""
         return self.__width
-
 
     @width.setter
     def width(self, value):
@@ -43,7 +42,6 @@ class Rectangle:
     def height(self):
         """Retrieves the height of a Rectangle instance."""
         return self.__height
-
 
     @height.setter
     def height(self, value):
