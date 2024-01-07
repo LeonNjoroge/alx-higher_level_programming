@@ -4,6 +4,7 @@ Module: print_square
 Description: Prints a square with the character #.
 """
 
+
 def print_square(size):
     """
     Prints a square where size is

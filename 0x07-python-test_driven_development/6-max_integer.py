@@ -4,6 +4,7 @@ Module: find_max_integer
 Description: Finds the max integer in a list.
 """
 
+
 def max_integer(lst=[]):
     """
     Function to find and return the max integer in a list of integers.

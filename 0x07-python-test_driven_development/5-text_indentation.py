@@ -4,6 +4,7 @@ Module: text_indentation
 Description: Adds two new lines after a set of characters.
 """
 
+
 def text_indentation(text):
     """
     Prints text with added two newlines
