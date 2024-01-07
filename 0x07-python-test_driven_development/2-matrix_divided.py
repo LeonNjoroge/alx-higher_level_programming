@@ -4,6 +4,7 @@ Module: matrix_divided
 Description: Divides each element of a matrix of numbers by a number
 """
 
+
 def matrix_divided(matrix, div):
     """
     Returns a new matrix (list of lists)
@@ -11,7 +12,7 @@ def matrix_divided(matrix, div):
     rounded to 2 decimal places.
     """
 
-    # Check if the input matrix is a valid matrix (list of lists) of integers/floats
+    # Check if the input matrix is a valid matrix (list of lists) of integers
     if not isinstance(matrix, list) or len(matrix) == 0 or not matrix[0]:
         raise TypeError("matrix must be a matrix (list of lists) " +
                         "of integers/floats")
@@ -42,6 +43,6 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     # Perform matrix division, rounding to 2 decimal places
-    other_matrix = [[round(element / div, 2) for element in row] for row in matrix]
+    other_matrix = [[round(x / div, 2) for x in row] for row in matrix]
 
     return other_matrix

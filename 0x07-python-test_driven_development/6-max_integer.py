@@ -12,15 +12,15 @@ def max_integer(lst=[]):
     # Check if the list is empty, return None if true
     if len(lst) == 0:
         return None
-    
+
     # Initialize the result with the first element of the list
     result = lst[0]
-    
+
     # Iterate through the list to find the max integer
     m = 1
     while m < len(lst):
         if lst[m] > result:
             result = lst[m]
         m += 1
-    
+ 
     return result

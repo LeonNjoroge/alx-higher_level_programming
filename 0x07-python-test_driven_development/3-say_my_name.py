@@ -4,6 +4,7 @@ Module: say_my_name
 Description: Prints a given first name and last name.
 """
 
+
 def say_my_name(first_name, last_name=""):
     """
     Prints a string with <first_name> and <last_name>.
@@ -18,4 +19,4 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("last_name must be a string")
 
     # Print the formatted string with the provided names
-    print("My name is {} {}".format(first_name, last_name))\
+    print("My name is {} {}".format(first_name, last_name))
