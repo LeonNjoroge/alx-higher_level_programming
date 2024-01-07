@@ -8,9 +8,9 @@
  *
  * This function prints details about a Python string object, including its
  * type, length, and value
- * 
+ *
 */
- 
+
 void print_python_string(PyObject *p)
 {
 const char *kind = NULL;
