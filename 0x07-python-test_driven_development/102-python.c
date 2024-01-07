@@ -2,7 +2,15 @@
 #include <unicodeobject.h>
 #include <Python.h>
 
-
+/*
+ * print_python_string - Provides information about a Python string object.
+ * @p: Pointer to the PyObject representing the Python string.
+ *
+ * This function prints details about a Python string object, including its
+ * type, length, and value
+ * 
+*/
+ 
 void print_python_string(PyObject *p)
 {
 const char *kind = NULL;
