@@ -23,5 +23,5 @@ def max_integer(lst=[]):
         if lst[m] > result:
             result = lst[m]
         m += 1
- 
+
     return result
