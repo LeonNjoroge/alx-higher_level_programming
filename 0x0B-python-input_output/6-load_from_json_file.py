@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Python script for reading a JSON file and creating a Python object."""
+"""Defines script for reading a JSON file and creating object."""
 import json
 
 

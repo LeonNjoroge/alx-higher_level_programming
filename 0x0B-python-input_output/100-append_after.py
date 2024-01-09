@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Python function for inserting text after specific lines in a text file."""
+"""Defines function for inserting text after specific lines in a text file."""
 
 
 def append_after(filename="", search_string="", new_string=""):

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Defines a Python script for converting a class instance to a JSON-compatible dictionary."""
-    
+"""Defines script for converting a class instance to a JSON dictionary."""
+
 
 def class_to_json(obj):
     """Returns the dictionary representation of a simple data structure.
