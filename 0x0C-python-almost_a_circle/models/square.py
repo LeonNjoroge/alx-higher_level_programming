@@ -9,7 +9,6 @@ class Square(Rectangle):
     """Representation of Square as a Module
     """
 
-
     def __init__(self, size, x=0, y=0, id=None):
         """Initialize a Square
         """
@@ -27,7 +26,6 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
-
 
     def __str__(self):
         """String representation of the Square
@@ -54,7 +52,6 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
-
 
     def to_dictionary(self):
         """Return a dictionary representation of the Square
