@@ -14,7 +14,6 @@ class Base:
 
     _obj_num = 0
 
-
     def __init__(self, id=None):
         """Initialize a new Base.
         Args:

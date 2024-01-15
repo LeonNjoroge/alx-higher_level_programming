@@ -10,7 +10,6 @@ class Rectangle(Base):
         Defines the Rectangle class, inheriting from Base.
     '''
 
-
     def __init__(self, width, height, x=0, y=0, id=None):
         '''
             Initializes a new Rectangle.
@@ -87,13 +86,11 @@ class Rectangle(Base):
         self.setter_validation("y", value)
         self.__y = value
 
-
     def area(self):
         '''
             Returns the area of the rectangle.
         '''
         return (self.height * self.width)
-
 
     def display(self):
         '''
@@ -104,7 +101,6 @@ class Rectangle(Base):
         for i in range(self.height):
             rectangle += (" " * self.x) + ("#" * self.width) + "\n"
         print(rectangle, end="")
-
 
     def update(self, *args, **kwargs):
         '''
@@ -123,7 +119,6 @@ class Rectangle(Base):
         except IndexError:
             pass
 
-
     def to_dictionary(self):
         '''
             Returns a dictionary representation of this class.
@@ -133,7 +128,6 @@ class Rectangle(Base):
                 'id': getattr(self, "id"),
                 'height': getattr(self, "height"),
                 'width': getattr(self, "width")}
-
 
     @staticmethod
     def setter_validation(attribute, value):
@@ -147,7 +141,6 @@ class Rectangle(Base):
                 raise ValueError("{} must be >= 0".format(attribute))
         elif value <= 0:
             raise ValueError("{} must be > 0".format(attribute))
-
 
     def __str__(self):
         '''
