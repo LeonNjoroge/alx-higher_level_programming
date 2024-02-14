@@ -1,4 +1,4 @@
--- Lists all shows without the comedy genre in the database hbtn_0d_tvshows.
+-- This Lists all shows without the comedy genre in the database
 -- Records are ordered by ascending show title.
 SELECT DISTINCT `title`
   FROM `tv_shows` AS t

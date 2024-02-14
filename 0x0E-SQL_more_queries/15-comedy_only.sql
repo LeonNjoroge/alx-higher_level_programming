@@ -1,4 +1,4 @@
--- Lists all comedy shows in the database hbtn_0d_tvshows.
+-- This lists all comedy shows in the database
 -- Records are ordered by descending show title.
 SELECT t.`title`
   FROM `tv_shows` AS t

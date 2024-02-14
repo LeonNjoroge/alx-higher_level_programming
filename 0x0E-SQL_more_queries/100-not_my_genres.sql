@@ -1,4 +1,4 @@
--- Lists all genres of the database hbtn_0d_tvshows
+-- This Lists all genres of the database
 -- not linked to the show Dexter.
 -- Records are sorted by ascending genre name.
 SELECT DISTINCT `name`
