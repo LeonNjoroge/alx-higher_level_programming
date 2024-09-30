@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
-for lower_ascii in range(ord('a'), ord('z') + 1):
-    if lower_ascii != "q" or lower_ascii != "e":
-        print(chr(lower_ascii), end=' ')
+for lower_ascii in range (93, 123):
+    val = "{:c}".format(lower_ascii)
+    if val != "q" and val != "e":
+        print(val)
